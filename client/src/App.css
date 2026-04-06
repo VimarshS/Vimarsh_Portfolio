@@ -1,0 +1,95 @@
+/* ══════════════════════════════════════════
+   GLOBAL STYLES – Dark Editorial Portfolio
+   ══════════════════════════════════════════ */
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: #16161e;
+  --bg-card-hover: #1e1e28;
+
+  --text-primary: #f0eee8;
+  --text-secondary: #8a8878;
+  --text-accent: #c8b87a;
+  --text-accent-dim: rgba(200, 184, 122, 0.35);
+
+  --border: rgba(200, 184, 122, 0.12);
+  --border-hover: rgba(200, 184, 122, 0.35);
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-code: "JetBrains Mono", "Courier New", monospace;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --radius: 6px;
+  --radius-lg: 12px;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.light {
+  --bg-primary: #f6f7ff;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #eef1fb;
+
+  --text-primary: #1b2233;
+  --text-secondary: #444f6d;
+  --text-accent: #7f6a1e;
+  --text-accent-dim: rgba(91, 79, 37, 0.45);
+
+  --border: rgba(91, 79, 37, 0.22);
+  --border-hover: rgba(91, 79, 37, 0.42);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+* {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar            { width: 6px; }
+::-webkit-scrollbar-track      { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb      { background: var(--text-accent-dim); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover{ background: var(--text-accent); }
+
+/* ── Utility ── */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Noise grain overlay ── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}

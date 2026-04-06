@@ -1,0 +1,86 @@
+/* ═══ ABOUT ═══ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-bio {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 2;
+}
+
+/* Education */
+.about-edu-title {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-accent);
+  margin-bottom: 1rem;
+}
+
+.edu-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.edu-row:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+.edu-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.edu-degree {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.edu-institution {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.edu-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  white-space: nowrap;
+}
+.edu-year {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  color: var(--text-accent);
+}
+.edu-score {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+/* ═══ Responsive ═══ */
+@media (max-width: 700px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

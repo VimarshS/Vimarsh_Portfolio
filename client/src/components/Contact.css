@@ -1,0 +1,129 @@
+/* ═══ CONTACT ═══ */
+.contact-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contact-intro {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.2rem;
+  line-height: 1.8;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-family: var(--font-code);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--text-accent);
+  box-shadow: 0 0 0 3px rgba(200, 184, 122, 0.15);
+}
+
+/* Submit */
+.contact-submit {
+  width: 100%;
+  cursor: pointer;
+  margin-top: 0.6rem;
+  transition: var(--transition);
+}
+.contact-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Error */
+.contact-error {
+  font-size: 0.78rem;
+  color: #e07575;
+  text-align: center;
+  margin-top: -0.4rem;
+}
+
+/* Success state */
+.contact-success {
+  text-align: center;
+  padding: 3rem 1rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(200, 184, 122, 0.12);
+  border: 2px solid var(--text-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.8rem;
+  color: var(--text-accent);
+}
+.contact-success h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+.contact-success p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.4rem;
+}
+
+/* ═══ Responsive ═══ */
+@media (max-width: 560px) {
+  .form-row { grid-template-columns: 1fr; }
+}
