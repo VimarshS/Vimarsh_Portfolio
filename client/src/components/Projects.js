@@ -6,14 +6,6 @@ import "./Projects.css";
 
 const projects = [
   {
-    title: "Portfolio Website",
-    description: "Responsive personal portfolio built from scratch — the very site you're viewing now. Showcases projects, skills, and a working contact form.",
-    tags: ["React.js", "Node.js", "MongoDB", "Express", "CSS3"],
-    github: "https://github.com/VimarshS",
-    projectUrl: "https://vimarsh-portfolio.vercel.app",
-    live: "",
-  },
-  {
     title: "Real-Time Chat App",
     description: "Fully interactive chat platform with instant messaging powered by WebSockets, room-based conversations, and online status indicators.",
     tags: ["React.js", "Node.js", "Socket.io", "MongoDB", "CSS3"],
@@ -38,13 +30,22 @@ const projects = [
     live: "",
   },
   {
-    title: "Expense Tracker App",
-    description: "Personal finance application featuring user authentication, category-based expense logging, and interactive data visualisation charts.",
-    tags: ["React.js", "Node.js", "MongoDB", "Express", "Chart.js"],
+  title: "ExamNotesAI",
+  description: "AI-powered platform for generating, organizing, and accessing exam notes efficiently to support quick learning and revision.",
+  tags: ["React.js", "Node.js", "Express.js", "MongoDB", "OpenAI API"],
+  github: "https://github.com/VimarshS/ExamNotesAI.git",
+  projectUrl: "https://examnotes-ai.vercel.app", // Replace with your actual deployed URL
+  live: "",
+},
+{
+    title: "Portfolio Website",
+    description: "Responsive personal portfolio built from scratch — the very site you're viewing now. Showcases projects, skills, and a working contact form.",
+    tags: ["React.js", "Node.js", "MongoDB", "Express", "CSS3"],
     github: "https://github.com/VimarshS",
-    projectUrl: "https://expense-tracker-demo.vercel.app",
+    projectUrl: "https://vimarsh-portfolio.vercel.app",
     live: "",
   },
+
 ];
 
 export default function Projects() {
