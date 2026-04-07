@@ -1,5 +1,6 @@
 {
-  "regions": ["iad1"],
+  "buildCommand": "cd client && npm run build",
+  "outputDirectory": "client/build",
   "functions": {
     "api/[...path].js": {
       "memory": 1024,
@@ -8,14 +9,8 @@
   },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/[...path]"
-    },
-    {
-      "source": "/(.*)",
+      "source": "/(?!api)(.*)",
       "destination": "/index.html"
     }
-  ],
-  "buildCommand": "cd client && npm run build",
-  "outputDirectory": "client/build"
+  ]
 }
