@@ -17,15 +17,27 @@ app.use(express.json());
 
 /* ── MongoDB Connection ── */
 const mongoUri = process.env.MONGO_URI;
-if (!mongoUri) {
-  console.error("❌ Environment variable MONGO_URI is missing. Ensure .env path is correct and contains MONGO_URI.");
-  process.exit(1);
+const mongoEnabled = Boolean(mongoUri);
+
+async function connectMongo() {
+  if (!mongoEnabled) {
+    console.warn("⚠️ MONGO_URI is not configured. Contact messages will not be saved to MongoDB.");
+    return;
+  }
+
+  if (mongoose.connection.readyState === 1) {
+    return;
+  }
+
+  try {
+    await mongoose.connect(mongoUri);
+    console.log("✅ MongoDB connected");
+  } catch (err) {
+    console.error("❌ MongoDB connection error:", err);
+  }
 }
 
-mongoose
-  .connect(mongoUri)
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+connectMongo();
 
 /* ── Routes ── */
 app.use("/api/contact", contactRoutes);

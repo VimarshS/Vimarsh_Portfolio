@@ -4,7 +4,9 @@ import useReveal from "../hooks/useReveal";
 import "./Section.css";
 import "./Contact.css";
 
-const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API = process.env.REACT_APP_API_URL
+  ? process.env.REACT_APP_API_URL.replace(/\/+$/, "")
+  : "";
 
 export default function Contact() {
   const [ref, visible] = useReveal();
@@ -26,7 +28,7 @@ export default function Contact() {
     } catch (err) {
       setStatus("error");
       setErrMsg(
-        err.response?.data?.msg || "Something went wrong. Please try again."
+        err.response?.data?.msg || err.message || "Something went wrong. Please try again."
       );
     }
   };
