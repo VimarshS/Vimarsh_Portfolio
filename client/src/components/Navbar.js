@@ -57,7 +57,7 @@ export default function Navbar() {
 
         <a
           className="resume-btn"
-          href="/resume.pdf"
+          href="/VIMARSH_RESUME (7).pdf"
           download
           target="_blank"
           rel="noopener noreferrer"
