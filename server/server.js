@@ -47,7 +47,7 @@ async function connectMongo() {
 connectMongo();
 
 /* ── Routes ── */
-app.use("/api/contact", contactRoutes);
+app.use(["/api/contact", "/contact"], contactRoutes);
 
 /* ── Health check ── */
 app.get("/api/health", (req, res) => {
