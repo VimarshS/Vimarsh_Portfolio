@@ -32,6 +32,11 @@ const transporter = emailEnabled
     })
   : null;
 
+/* ── OPTIONS /api/contact ── */
+router.options("/", (req, res) => {
+  res.sendStatus(200);
+});
+
 /* ── POST /api/contact ── */
 router.post("/", async (req, res) => {
   try {
