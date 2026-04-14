@@ -1,16 +1,19 @@
 {
-  "buildCommand": "npm --prefix client install && npm --prefix client run build",
-  "outputDirectory": "client/build",
-  "functions": {
-    "api/[...path].js": {
-      "memory": 1024,
-      "maxDuration": 30
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/[...path].js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "dest": "/api/[...path].js"
     },
     {
       "src": "/(.*)",
