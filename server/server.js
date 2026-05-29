@@ -15,11 +15,12 @@ const PORT = process.env.PORT || 5000;
 app.use(
   cors({
     origin: true,
-    methods: ["GET", "POST", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
+    credentials: true,
   })
 );
-app.options("*", cors());
+app.options("*", cors()); // Handle preflight for all routes
 app.use(express.json());
 
 /* ── MongoDB Connection ── */
@@ -47,7 +48,8 @@ async function connectMongo() {
 connectMongo();
 
 /* ── Routes ── */
-app.use(["/api/contact", "/contact"], contactRoutes);
+app.use("/api/contact", contactRoutes);
+app.use("/contact", contactRoutes); // Fallback route
 
 /* ── Health check ── */
 app.get("/api/health", (req, res) => {
