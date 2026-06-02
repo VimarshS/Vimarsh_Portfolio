@@ -6,10 +6,18 @@ import "./Projects.css";
 
 const projects = [
   {
+  title: "Intervu AI",
+  description: "AI-powered interview practice platform with mock interviews, resume analysis, coding rounds, voice mode, and detailed feedback tracking.",
+  tags: ["Next.js", "TypeScript", "Supabase", "Gemini AI", "Tailwind CSS"],
+  github: "https://github.com/VimarshS/intervu-ai.git",
+  projectUrl: "https://intervu-ai-weld.vercel.app/",
+  live: "",
+},
+  {
     title: "Real-Time Chat App",
     description: "Fully interactive chat platform with instant messaging powered by WebSockets, room-based conversations, and online status indicators.",
     tags: ["React.js", "Node.js", "Socket.io", "MongoDB", "CSS3"],
-    github: "https://github.com/VimarshS",
+    github: "https://github.com/VimarshS/chat-app.git",
     projectUrl: "https://chat-app-pink-eta-53.vercel.app/",
     live: "",
   },
@@ -25,7 +33,7 @@ const projects = [
     title: "Text-Tools",
     description: "A lightweight text analysis utility that provides word/character count, case conversion, formatting options, and readability statistics.",
     tags: ["React.js", "HTML5", "CSS3", "JavaScript"],
-    github: "https://github.com/VimarshS",
+    github: "https://github.com/VimarshS/Text_tools.git",
     projectUrl: "https://text-tools-vimarsh.vercel.app/",
     live: "",
   },
@@ -41,7 +49,7 @@ const projects = [
     title: "Portfolio Website",
     description: "Responsive personal portfolio built from scratch — the very site you're viewing now. Showcases projects, skills, and a working contact form.",
     tags: ["React.js", "Node.js", "MongoDB", "Express", "CSS3"],
-    github: "https://github.com/VimarshS",
+    github: "https://github.com/VimarshS/Vimarsh_Portfolio.git",
     projectUrl: "https://vimarsh-portfolio.vercel.app",
     live: "",
   },
